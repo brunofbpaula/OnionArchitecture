@@ -32,7 +32,7 @@ namespace CP2.Application.Services
             return _repository.SalvarDados(entity);
         }
 
-        public VendedorEntity? EditarDadosVendedor(VendedorEntity entity)
+        public VendedorEntity? EditarDadosVendedor(int id, VendedorEntity entity)
         {
             return _repository.EditarDados(entity);
         }

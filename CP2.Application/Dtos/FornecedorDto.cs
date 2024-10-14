@@ -1,4 +1,5 @@
-﻿using CP2.Domain.Interfaces.Dtos;
+﻿using CP2.Domain.Entities;
+using CP2.Domain.Interfaces.Dtos;
 using FluentValidation;
 using System;
 using System.Linq;
@@ -22,6 +23,21 @@ namespace CP2.Application.Dtos
             if (!validateResult.IsValid)
                 throw new Exception(string.Join(" e ", validateResult.Errors.Select(x => x.ErrorMessage)));
         }
+
+        public FornecedorEntity MapToFornecedorEntity(FornecedorDto dto)
+        {
+            return new FornecedorEntity
+            {
+                Id = dto.Id,
+                Nome = dto.Nome,
+                Cnpj = dto.Cnpj,
+                Endereco = dto.Endereco,
+                Telefone = dto.Telefone,
+                Email = dto.Email,
+                CriadoEm = dto.CriadoEm
+            };
+        }
+
     }
 
     internal class FornecedorDtoValidation : AbstractValidator<FornecedorDto>

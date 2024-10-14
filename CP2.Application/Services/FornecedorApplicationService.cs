@@ -28,7 +28,7 @@ namespace CP2.Application.Services
             return _repository.ObterTodos();
         }
 
-        public FornecedorEntity? EditarDadosFornecedor(FornecedorEntity entity)
+        public FornecedorEntity? EditarDadosFornecedor(int id, FornecedorEntity entity)
         {
             return _repository.EditarDados(entity);
         }

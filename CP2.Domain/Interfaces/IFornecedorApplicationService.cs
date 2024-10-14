@@ -8,7 +8,7 @@ namespace CP2.Domain.Interfaces
         IEnumerable<FornecedorEntity> ObterTodosFornecedores();
         FornecedorEntity? ObterFornecedorPorId(int id);
         FornecedorEntity? SalvarDadosFornecedor(FornecedorEntity entity);
-        FornecedorEntity? EditarDadosFornecedor(FornecedorEntity entity);
+        FornecedorEntity? EditarDadosFornecedor(int id, FornecedorEntity entity);
         FornecedorEntity? DeletarDadosFornecedor(int id);
     }
 }

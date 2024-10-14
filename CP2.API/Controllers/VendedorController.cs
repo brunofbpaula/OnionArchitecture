@@ -33,7 +33,10 @@ namespace CP2.API.Controllers
             return BadRequest("Não foi possivel obter os dados");
         }
 
-
+        /// <summary>
+        /// Metodo para obter todos os dados do Vendedor por ID
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("{id}")]
         [Produces<VendedorEntity>]
         public IActionResult GetPorId(int id)
@@ -46,7 +49,10 @@ namespace CP2.API.Controllers
             return BadRequest("Não foi possivel obter os dados");
         }
 
-
+        /// <summary>
+        /// Metodo para criar Vendedor
+        /// </summary>
+        /// <returns></returns>
         [HttpPost]
         [Produces<VendedorEntity>]
         public IActionResult Post([FromBody] VendedorDto entity)
@@ -74,6 +80,10 @@ namespace CP2.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Metodo para atualizar Vendedor
+        /// </summary>
+        /// <returns></returns>
         [HttpPut("{id}")]
         [Produces<VendedorEntity>]
         public IActionResult Put(int id, [FromBody] VendedorDto entity)
@@ -101,7 +111,10 @@ namespace CP2.API.Controllers
             }
         }
 
-
+        /// <summary>
+        /// Metodo para deletar Vendedor
+        /// </summary>
+        /// <returns></returns>
         [HttpDelete("{id}")]
         [Produces<VendedorEntity>]
         public IActionResult Delete(int id)

@@ -53,7 +53,8 @@ namespace CP2.API.Controllers
         {
             try
             {
-                var objModel = _applicationService.SalvarDadosFornecedor(entity);
+                var newEntity = entity.MapToFornecedorEntity(entity);
+                var objModel = _applicationService.SalvarDadosFornecedor(newEntity);
 
                 if (objModel is not null)
                     return Ok(objModel);
@@ -76,7 +77,8 @@ namespace CP2.API.Controllers
         {
             try
             {
-                var objModel = _applicationService.EditarDadosFornecedor(id, entity);
+                var newEntity = entity.MapToFornecedorEntity(entity);
+                var objModel = _applicationService.EditarDadosFornecedor(id, newEntity);
 
                 if (objModel is not null)
                     return Ok(objModel);
