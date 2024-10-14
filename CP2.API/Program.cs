@@ -1,8 +1,20 @@
+using CP2.Application.Services;
+using CP2.Data.AppData;
+using CP2.Data.Repositories;
+using CP2.Domain.Interfaces;
 using CP2.IoC;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddDbContext<ApplicationContext>(options =>
+    options.UseOracle(builder.Configuration.GetConnectionString("OracleConnection")));
+
 // Add services to the container.
+builder.Services.AddScoped<IVendedorRepository, VendedorRepository>();
+builder.Services.AddScoped<IFornecedorRepository, FornecedorRepository>();
+builder.Services.AddScoped<IVendedorApplicationService, VendedorApplicationService>();
+builder.Services.AddScoped<IFornecedorApplicationService, FornecedorApplicationService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
