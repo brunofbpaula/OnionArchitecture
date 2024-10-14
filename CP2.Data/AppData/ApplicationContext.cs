@@ -5,7 +5,7 @@ namespace CP2.Data.AppData
 {
     public class ApplicationContext : DbContext
     {
-        public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
+        public ApplicationContext(DbContextOptions<ApplicationContext> options): base(options)
         {
 
         }

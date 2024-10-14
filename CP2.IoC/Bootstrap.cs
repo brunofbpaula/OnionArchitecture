@@ -5,6 +5,8 @@ using CP2.Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using System.Configuration;
 
 namespace CP2.IoC
 {
@@ -17,12 +19,12 @@ namespace CP2.IoC
             });
 
 
-            services.AddTransient<IFornecedorRepository, FornecedorRepository>();
-            services.AddTransient<IVendedorRepository, VendedorRepository>();
+            // Use AddScoped to maintain a single instance per request
+            services.AddScoped<IFornecedorRepository, FornecedorRepository>();
+            services.AddScoped<IVendedorRepository, VendedorRepository>();
 
-            services.AddTransient<IFornecedorApplicationService, FornecedorApplicationService>();
-            services.AddTransient<IVendedorApplicationService, VendedorApplicationService>();
-
+            services.AddScoped<IFornecedorApplicationService, FornecedorApplicationService>();
+            services.AddScoped<IVendedorApplicationService, VendedorApplicationService>();
         }
     }
 }
