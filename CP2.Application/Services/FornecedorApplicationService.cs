@@ -23,5 +23,20 @@ namespace CP2.Application.Services
             return _repository.ObterPorId(id);
         }
 
+        public IEnumerable<FornecedorEntity> ObterTodosFornecedores()
+        {
+            return _repository.ObterTodos();
+        }
+
+        public FornecedorEntity? EditarDadosFornecedor(FornecedorEntity entity)
+        {
+            return _repository.EditarDados(entity);
+        }
+
+        public FornecedorEntity? SalvarDadosFornecedor(FornecedorEntity entity)
+        {
+            return _repository.SalvarDados(entity);
+        }
+
     }
 }

@@ -10,7 +10,7 @@ namespace CP2.Domain.Interfaces.Dtos
         String Telefone { get; set; }
         DateTime DataNascimento { get; set; }
         String Endereco { get; set; }
-        DataSetDateTime DataContratacao { get; set; }
+        DateTime DataContratacao { get; set; }
         Decimal ComissaoPercentual { get; set; }
         Decimal MetaMensal { get; set; }
         DateTime CriadoEm { get; set; }

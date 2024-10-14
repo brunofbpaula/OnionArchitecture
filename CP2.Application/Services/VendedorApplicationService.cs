@@ -26,5 +26,16 @@ namespace CP2.Application.Services
         {
             return _repository.ObterPorId(id);
         }
+
+        public VendedorEntity? SalvarDadosVendedor(VendedorEntity entity)
+        {
+            return _repository.SalvarDados(entity);
+        }
+
+        public VendedorEntity? EditarDadosVendedor(VendedorEntity entity)
+        {
+            return _repository.EditarDados(entity);
+        }
+
     }
 }
