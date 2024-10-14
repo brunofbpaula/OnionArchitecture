@@ -18,6 +18,11 @@ namespace CP2.IoC
 
 
             services.AddTransient<IFornecedorRepository, FornecedorRepository>();
+            services.AddTransient<IVendedorRepository, VendedorRepository>();
+
+            services.AddTransient<IFornecedorApplicationService, FornecedorApplicationService>();
+            services.AddTransient<IVendedorApplicationService, VendedorApplicationService>();
+
         }
     }
 }
