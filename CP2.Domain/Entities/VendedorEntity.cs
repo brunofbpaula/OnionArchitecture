@@ -13,9 +13,10 @@ namespace CP2.Domain.Entities
         public String Telefone { get; set; }
         public DateTime DataNascimento { get; set; }
         public String Endereco { get; set; }
-        public DataSetDateTime DataContratacao { get; set; }
+        public DateTime DataContratacao { get; set; }
         public Decimal ComissaoPercentual { get; set; }
         public Decimal MetaMensal { get; set; }
         public DateTime CriadoEm { get; set; }
     }
+    
 }

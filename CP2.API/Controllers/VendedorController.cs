@@ -53,7 +53,11 @@ namespace CP2.API.Controllers
         {
             try
             {
-                var objModel = _applicationService.SalvarDadosVendedor(entity);
+                entity.Validate();
+
+                var newEntity = entity.MapToVendedorEntity(entity);
+
+                var objModel = _applicationService.SalvarDadosVendedor(newEntity);
 
                 if (objModel is not null)
                     return Ok(objModel);
@@ -76,7 +80,11 @@ namespace CP2.API.Controllers
         {
             try
             {
-                var objModel = _applicationService.EditarDadosVendedor(id, entity);
+                entity.Validate();
+
+                var newEntity = entity.MapToVendedorEntity(entity);
+
+                var objModel = _applicationService.EditarDadosVendedor(id, newEntity);
 
                 if (objModel is not null)
                     return Ok(objModel);

@@ -1,4 +1,5 @@
-﻿using CP2.Domain.Interfaces.Dtos;
+﻿using CP2.Domain.Entities;
+using CP2.Domain.Interfaces.Dtos;
 using FluentValidation;
 using System;
 using System.Linq;
@@ -25,6 +26,24 @@ namespace CP2.Application.Dtos
             if (!validateResult.IsValid)
                 throw new Exception(string.Join(" e ", validateResult.Errors.Select(x => x.ErrorMessage)));
         }
+
+        public VendedorEntity MapToVendedorEntity(VendedorDto dto)
+        {
+            return new VendedorEntity
+            {
+                Id = dto.Id,
+                Nome = dto.Nome,
+                Email = dto.Email,
+                Telefone = dto.Telefone,
+                DataNascimento = dto.DataNascimento,
+                Endereco = dto.Endereco,
+                DataContratacao = dto.DataContratacao,
+                ComissaoPercentual = dto.ComissaoPercentual,
+                MetaMensal = dto.MetaMensal,
+                CriadoEm = dto.CriadoEm
+            };
+        }
+
     }
 
     internal class VendedorDtoValidation : AbstractValidator<VendedorDto>
